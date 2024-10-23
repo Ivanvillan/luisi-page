@@ -38,4 +38,20 @@ document.addEventListener('DOMContentLoaded', () => {
   images.forEach(img => {
     img.setAttribute('loading', 'lazy');
   });
+
+  // Función para detectar si es un dispositivo móvil
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  // Configurar el enlace de contacto
+  const contactButton = document.getElementById('email-button');
+  if (contactButton) {
+    const email = 'luisinagasparoni@gmail.com';
+    const href = isMobileDevice()
+      ? `mailto:${email}`
+      : `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}`;
+    contactButton.setAttribute('href', href);
+    contactButton.setAttribute('target', '_blank');
+  }
 });
