@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'madeMirage';
-  src: url('/assets/madeMirage/MADEMirageMedium.otf') format('opentype');
+  src: url('./assets/madeMirage/MADEMirageMedium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
