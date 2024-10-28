@@ -54,7 +54,7 @@ nav ul li {
 nav ul li a {
   padding: 0.5rem 1rem;
   transition: color 0.3s ease, background-color 0.3s ease;
-  color: #555;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: bold;
 }
@@ -88,13 +88,13 @@ nav ul li a:hover, nav ul li a:focus {
 
 .hero-title {
   font-size: 2.5em;
-  color: #054026;
+  color: var(--color-primary);
   margin: 0;
 }
 
 .hero-description {
   font-size: 1.5em;
-  color: #AB0000;
+  color: var(--color-secondary);
 }
 
 .hero-images {
@@ -137,7 +137,7 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 #services h2 {
-  color: #054026;
+  color: var(--color-primary);
   margin-bottom: 30px;
 }
 
@@ -164,31 +164,80 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 #about {
+  background-color: var(--color-bg);
   padding: 40px 20px;
 }
 
 #about h2 {
-  color: #054026;
+  color: var(--color-primary);
   margin-bottom: 30px;
 }
 
 .about-content {
+  color: var(--color-text);
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
 
+#reviews {
+  padding: 40px 20px;
+  background-color: #f0e8e3;
+}
+
+#reviews h2 {
+  color: var(--color-primary);
+  margin-bottom: 30px;
+}
+
+.reviews ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.review-author {
+  color: var(--color-primary);
+  font-weight: bold;
+  margin: 0;
+}
+
 #contact {
-  background-color: #054026;
-  color: #fff;
+  background-color: var(--color-primary);
   padding: 40px 20px;
 }
 
 #contact h2 {
+  color: var(--color-bg);
   margin-bottom: 20px;
 }
 
 #contact p {
+  color: var(--color-bg);
   margin-bottom: 30px;
   max-width: 600px;
   margin-left: auto;
@@ -196,8 +245,8 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 #contact button {
-  background-color: #AB0000;
-  color: white;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
   border: none;
   padding: 12px 24px;
   font-size: 1.1em;
@@ -206,7 +255,7 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 footer {
-  background-color: #333;
+  background-color: var(--color-secondary);
   color: var(--color-bg);
   padding: 30px 20px;
   text-align: center;
@@ -233,7 +282,7 @@ footer a {
 }
 
 footer a:hover, footer a:focus {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   text-decoration: underline;
 }
 
@@ -316,6 +365,14 @@ footer p {
   }
 }
 
+
+@media (max-width: 768px) {
+  .reviews ul {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+}
+
 @media (min-width: 1024px) {
   body {
     font-size: 18px;
@@ -347,8 +404,8 @@ footer p {
 }
 
 .button {
-  background-color: #AB0000;
-  color: white;
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
   border: none;
   padding: 12px 24px;
   font-size: 1.1em;
@@ -414,17 +471,72 @@ body.dark-mode {
   color: var(--color-text);
 }
 
+body.dark-mode .hero-images img {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .hero-images img:hover {
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
+}
+
 body.dark-mode #services {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body.dark-mode #services h2 {
+  color: var(--color-text)
+}
+
+body.dark-mode #about {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+body.dark-mode #about h2 {
+  color: var(--color-text)
+}
+
+body.dark-mode #reviews {
   background-color: var(--color-bg);
 }
 
+body.dark-mode #reviews h2 {
+  color: var(--color-text)
+}
+
+body.dark-mode .review-card {
+  background-color: var(--color-card-bg);
+}
+
+body.dark-mode .review-author {
+  color: var(--color-text);
+}
+
+body.dark-mode #contact {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+body.dark-mode #contact h2 {
+  color: var(--color-text)
+}
+
+body.dark-mode #contact p {
+  color: var(--color-text);
+}
+
+body.dark-mode .contact-buttons .button {
+  color: var(--color-text);
+}
+
 body.dark-mode footer {
-  background-color: var(--color-footer-bg);
+  background-color: var(--color-bg);
   color: var(--color-text);
 }
 
 body.dark-mode footer a {
-  background-color: var(--color-footer-bg);
+  background-color: var(--color-bg);
   color: var(--color-text);
 }
 
@@ -471,15 +583,6 @@ img {
   transform: scale(1.05) translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   z-index: 10;
-}
-
-/* Ajustes para el modo oscuro */
-body.dark-mode .hero-images img {
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .hero-images img:hover {
-  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
 }
 
 /* Asegurar que las imágenes mantengan su posición relativa */
